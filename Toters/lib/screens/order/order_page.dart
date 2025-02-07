@@ -38,7 +38,6 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // Ensure we don't use _tabController if the user is not logged in
     return _isLoggedIn
         ? Scaffold(
       appBar: CustomAppBar(title: "My Orders"),
