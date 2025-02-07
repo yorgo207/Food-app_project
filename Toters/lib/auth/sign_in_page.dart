@@ -38,7 +38,7 @@ class SignInPage extends StatelessWidget {
             phone: phone, password: password);
         authController.login(signInBody).then((status){
           if (status.isSuccess){
-            Get.toNamed(RouteHelper.getInitial());
+            Get.toNamed(RouteHelper.getInitial(pageId: 3));
           }else{
             showCustomSnackBar(status.message);
           }
@@ -114,6 +114,7 @@ class SignInPage extends StatelessWidget {
                 GestureDetector(
                   onTap: (){
                     _login(authController);
+
                   },
                   child:  Container(
                     width: Dimensions.screenWidth/2,

@@ -10,7 +10,8 @@ import 'package:toters/screens/order/order_page.dart';
 import '../../utils/colors.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}): super(key:key);
+  int pageId;
+  HomePage({Key? key, required this.pageId}): super(key:key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -18,6 +19,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex=0;
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.pageId; // Access pageId through widget
+  }
 
 
   List pages = [

@@ -226,7 +226,7 @@ class CartPage extends StatelessWidget {
                         );
                         cartController.clear();
                         Get.find<OrderController>().placeOrder(placeOrder);
-
+                        Get.toNamed(RouteHelper.getInitial());
                       }else{
                         Get.toNamed(RouteHelper.getSignInPage());
                       }

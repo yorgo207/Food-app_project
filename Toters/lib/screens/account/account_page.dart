@@ -91,7 +91,7 @@ class AccountPage extends StatelessWidget {
                               if(Get.find<AuthController>().userLoggedIn()) {
                                 Get.find<AuthController>().clearSharedData();
                                 Get.find<CartController>().clearCartHistory();
-                                Get.toNamed(RouteHelper.getInitial());
+                                Get.toNamed(RouteHelper.getInitial(pageId: 0));
                               }else{
                                 print("you are logged out");
                                 Get.snackbar("User Not Signed In", "You are already logged out");

@@ -25,7 +25,7 @@ class RouteHelper{
 
 
   static String getSplashPage()=>'$splashPage';
-  static String getInitial()=>'$initial';
+  static String getInitial({int pageId=0})=>'$initial?pageId=$pageId';
   static String getPoplarFood(int pageId, String page)=>'$popularFood?pageId=$pageId&page=$page';
   static String getRecommendedFood(int pageId, String page)=>'$recommendedFood?pageId=$pageId&page=$page';
   static String getCartPage(int pageId, String page)=>'$cartPage?pageId=$pageId&page=$page';
@@ -40,7 +40,8 @@ class RouteHelper{
     GetPage(name:splashPage, page:()=>SplashScreen()),
 
     GetPage(name: initial, page:(){
-      return HomePage();}),
+      var id=Get.parameters['pageId'];
+      return HomePage(pageId: int.parse(id!));}),
 
     GetPage(name: popularFood, page:(){
       var pageId=Get.parameters['pageId'];
